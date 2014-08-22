@@ -300,13 +300,13 @@ class Device(log.Loggable):
                                          controlUrl,
                                          eventSubUrl, presentationUrl, scpdUrl, self))
 
-            # now look for all sub devices
-            embedded_devices = d.find('./{%s}deviceList' % ns)
-            if embedded_devices:
-                for d in embedded_devices.findall('./{%s}device' % ns):
-                    embedded_device = Device(self)
-                    self.add_device(embedded_device)
-                    embedded_device.parse_device(d)
+        # now look for all sub devices
+        embedded_devices = d.find('./{%s}deviceList' % ns)
+        if embedded_devices:
+            for d in embedded_devices.findall('./{%s}device' % ns):
+                embedded_device = Device(self)
+                self.add_device(embedded_device)
+                embedded_device.parse_device(d)
 
         self.receiver()
 
