@@ -26,6 +26,9 @@ installation and basic configuration instructions.
 For now please pardon the inconvenience
 and have a look @ http://coherence-project.org
 
+Ubuntu Package dependancies
+===========================
+   sudo apt install python-louie
 
 Installation from source
 ========================
